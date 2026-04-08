@@ -33,6 +33,15 @@ export default function MobileView() {
   const mobileRef = useRef<HTMLDivElement>(null);
   const contact = useContactForm();
 
+  /**
+   * Mobile View
+   * @description Mobile View is a component that is used to display the mobile view of the website.
+   * @returns {React.ReactNode} Mobile View component
+   * @example
+   * <MobileView />
+   * @example
+   */
+
   useEffect(() => {
     const el = mobileRef.current;
     if (!el) return;
