@@ -10,6 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const GitHubActivity = dynamic(() => import("@/components/GitHubActivity"), { ssr: false });
 import ProjectCover from "@/components/ProjectCover";
+import MobileProjectList from "@/components/MobileProjectList";
 import {
   ReactIcon,
   VueIcon,
@@ -108,9 +109,9 @@ export default function MobileView() {
       <header className="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-md shadow-[0_0_15px_rgba(201,243,28,0.1)]">
         <div className="flex justify-between items-center px-6 py-4 w-full">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-[#C9F31D]">
+            {/* <span className="material-symbols-outlined text-[#C9F31D]">
               terminal
-            </span>
+            </span> */}
             <h1 className="text-xl font-black tracking-tighter text-[#C9F31D] font-headline">
               Ali Raza
             </h1>
@@ -216,7 +217,7 @@ export default function MobileView() {
               </div>
               <div className="text-center">
                 <p className="text-2xl font-black text-primary-fixed font-headline">
-                  1K+
+                  523+
                 </p>
                 <p className="text-[10px] uppercase tracking-widest text-white/50">
                   Delivered
@@ -238,6 +239,37 @@ export default function MobileView() {
           >
             Let&apos;s Talk About Your Project
           </a>
+          {/* Trust signals */}
+          <div className="mt-8 flex flex-col items-center gap-3 w-full">
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+              <div className="flex items-center gap-1.5 bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/20 rounded-full px-3 py-1.5">
+                <span className="material-symbols-outlined text-yellow-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                <span className="material-symbols-outlined text-yellow-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                <span className="material-symbols-outlined text-yellow-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                <span className="material-symbols-outlined text-yellow-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                <span className="material-symbols-outlined text-yellow-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                <span className="text-[10px] text-white font-bold ml-1">5.0 on Upwork</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/20 rounded-full px-3 py-1.5">
+                <span className="material-symbols-outlined text-green-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                <span className="text-[10px] text-white font-semibold">Top Rated Plus</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+              {["React / Next.js", "Node.js / NestJS", "TypeScript", "Full-Stack"].map((tag) => (
+                <span key={tag} className="text-[10px] font-medium text-on-surface-variant border border-outline-variant/15 rounded-md px-2 py-1 bg-surface-container-lowest/40">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-[10px] text-on-surface-variant">Available for freelance &amp; full-time roles</span>
+            </div>
+          </div>
           </div>{/* end m-hero-text */}
         </section>
 
@@ -333,49 +365,27 @@ export default function MobileView() {
           </div>
         </section>
 
-        {/* Special Services */}
-        <section className="m-section px-6 py-10" id="m-services">
-          <h3 className="font-headline text-2xl font-bold mb-8">
-            Special Services
+        {/* What I Can Build */}
+        <section className="m-section px-6 py-10 bg-surface-container-lowest">
+          <h3 className="font-headline text-2xl font-bold mb-2 text-center">
+            What I Can Build <span className="text-primary-fixed">For You.</span>
           </h3>
+          <p className="text-white/50 text-sm text-center mb-8">End-to-end development services designed to ship faster and earn more.</p>
           <div className="space-y-4">
             {[
-              {
-                icon: "cloud_done",
-                title: "Cloud Migration",
-                sub: "AWS / Azure / GCP",
-              },
-              {
-                icon: "security",
-                title: "App Security Audit",
-                sub: "Pentesting / Auth",
-              },
-              {
-                icon: "api",
-                title: "API Ecosystems",
-                sub: "GraphQL / REST",
-              },
+              { icon: "psychology", title: "AI-Powered Features", desc: "Chatbots, smart search, content generation: AI features that automate workflows and boost engagement." },
+              { icon: "rocket_launch", title: "MVP to Launch", desc: "Get to market fast. I build your first version in weeks, then iterate based on real user data." },
+              { icon: "database", title: "Backend & APIs", desc: "Rock-solid APIs and databases that handle thousands of concurrent users without breaking a sweat." },
+              { icon: "layers", title: "Full-Stack Apps", desc: "Pixel-perfect frontends wired to powerful backends. One developer, complete ownership." },
+              { icon: "shopping_cart", title: "E-commerce", desc: "Stores that convert. Payment gateways, inventory, analytics, everything optimised for revenue." },
+              { icon: "speed", title: "Performance Rescue", desc: "Slow site killing conversions? I audit, fix Core Web Vitals, and cut load times." },
             ].map((svc) => (
-              <div
-                key={svc.title}
-                className="bg-surface-container rounded-xl p-5 flex items-center justify-between border border-outline-variant/10"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-primary-fixed/10 rounded-lg flex items-center justify-center">
-                    <span className="material-symbols-outlined text-primary-fixed">
-                      {svc.icon}
-                    </span>
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-sm">{svc.title}</h5>
-                    <p className="text-white/40 text-[10px] uppercase tracking-wider">
-                      {svc.sub}
-                    </p>
-                  </div>
+              <div key={svc.title} className="bg-surface-container-low rounded-2xl p-5 border border-outline-variant/5">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="material-symbols-outlined text-primary-fixed text-xl">{svc.icon}</span>
+                  <h4 className="font-bold text-sm">{svc.title}</h4>
                 </div>
-                <span className="material-symbols-outlined text-primary-fixed">
-                  chevron_right
-                </span>
+                <p className="text-white/50 text-xs leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
@@ -386,71 +396,7 @@ export default function MobileView() {
           <h3 className="font-headline text-2xl font-bold mb-8">
             Selected Projects
           </h3>
-          <div className="space-y-8">
-            {[
-              {
-                slug: "custom-enterprise-crm",
-                category: "SaaS / ESG",
-                title: "Ethos ESG Platform",
-              },
-              {
-                slug: "self-hosted-gateway",
-                category: "Fintech",
-                title: "Self-Hosted Payment Gateway",
-              },
-              {
-                slug: "sparkdoc-ai",
-                category: "AI/ML",
-                title: "SparkDoc AI",
-              },
-              {
-                slug: "3d-generative-nft-builder",
-                category: "Web3",
-                title: "3D NFT Builder",
-              },
-              {
-                slug: "ducorr",
-                category: "Corporate",
-                title: "Ducorr",
-              },
-              {
-                slug: "autogather",
-                category: "AI / SaaS",
-                title: "AutoGather",
-              },
-              {
-                slug: "forborga",
-                category: "Fintech",
-                title: "Forborga",
-              },
-              {
-                slug: "managed-hosting-dashboard",
-                category: "SaaS / Cloud",
-                title: "Hosting Management",
-              },
-            ].map((project) => (
-              <div key={project.title} className="group">
-                <div className="relative rounded-2xl overflow-hidden mb-4 aspect-video">
-                  <ProjectCover slug={project.slug} title={project.title} />
-                </div>
-                <p className="text-primary-fixed text-xs font-bold uppercase tracking-widest mb-1">
-                  {project.category}
-                </p>
-                <h4 className="font-headline font-bold text-xl mb-3">
-                  {project.title}
-                </h4>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="flex items-center gap-2 text-on-surface text-sm font-bold border-b border-primary-fixed pb-1"
-                >
-                  View Project{" "}
-                  <span className="material-symbols-outlined text-sm">
-                    north_east
-                  </span>
-                </Link>
-              </div>
-            ))}
-          </div>
+          <MobileProjectList />
         </section>
 
         {/* GitHub Activity */}
@@ -588,7 +534,7 @@ export default function MobileView() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary-container text-base" style={{ fontVariationSettings: "'FILL' 1" }}>mail</span>
-                <a href="mailto:contact@aliraza.tech" className="text-sm text-white/50 hover:text-white transition-colors">contact@aliraza.tech</a>
+                <a href="mailto:contact@meetaliraza.com" className="text-sm text-white/50 hover:text-white transition-colors">contact@meetaliraza.com</a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary-container text-base" style={{ fontVariationSettings: "'FILL' 1" }}>call</span>
@@ -614,7 +560,7 @@ export default function MobileView() {
 
             {/* Copyright */}
             <div className="pt-4 border-t border-white/5">
-              <p className="text-xs text-white/30">Copyright @2025, All Rights Reserved</p>
+              <p className="text-xs text-white/30">Copyright @2026, All Rights Reserved</p>
             </div>
           </div>
         </footer>

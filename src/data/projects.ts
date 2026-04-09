@@ -766,6 +766,335 @@ export const projects: Project[] = [
       { src: "/images/project-pics/bigscoots/hosting-overview.jpg", caption: "Hosting Overview" },
     ],
     techStack: ["React", "Node.js", "WordPress", "Cloudflare", "AWS", "MySQL"],
+    nextProjectSlug: "crypto-wallet",
+  },
+  {
+    slug: "crypto-wallet",
+    title: "CryptoVault",
+    subtitle: "Web3 Crypto Management Dashboard",
+    heroImage: "/images/project-pics/crypto-wallet/dashboard.png",
+    tags: ["Web3", "Fintech", "Nuxt.js", "ERC-1155"],
+    cardTags: ["Web3", "Fintech"],
+    cardDesc:
+      "A comprehensive cryptocurrency management dashboard for sending, receiving, tracking prices, and accessing DApps from a single streamlined interface.",
+    stats: [
+      { value: "5+", label: "Blockchain Networks", icon: "token" },
+      { value: "< 1s", label: "Transaction Speed", icon: "bolt" },
+      { value: "50K+", label: "Wallet Interactions", icon: "account_balance_wallet" },
+      { value: "99.9%", label: "Uptime SLA", icon: "verified" },
+    ],
+    challenge: [
+      "Crypto traders needed a unified platform to manage assets across multiple blockchains without switching between fragmented tools.",
+      "Existing wallets offered basic send/receive but lacked portfolio analytics, DApp integration, and real-time price tracking in a single view.",
+    ],
+    challengeCards: [
+      {
+        icon: "scatter_plot",
+        title: "Multi-Chain Complexity",
+        desc: "Users juggled multiple wallets and interfaces for different blockchain networks, increasing friction and error risk.",
+      },
+      {
+        icon: "analytics",
+        title: "No Unified Analytics",
+        desc: "Portfolio performance, token distribution, and market trends were scattered across multiple tools with no consolidated view.",
+      },
+      {
+        icon: "shield",
+        title: "Security vs. Usability",
+        desc: "Balancing enterprise-grade security (private key management, 2FA) with an intuitive user experience for everyday transactions.",
+      },
+    ],
+    solution: {
+      description:
+        "Built a modern cryptocurrency management dashboard that consolidates wallet management, portfolio tracking, DApp access, and real-time market data into a single, elegant interface. Leveraging Nuxt.js for server-side rendering and Vuetify for Material Design components, the platform delivers blazing-fast performance with a polished, professional UI that crypto traders trust.",
+      image: "/images/project-pics/crypto-wallet/portfolio.png",
+      features: [
+        {
+          icon: "send",
+          title: "Instant Send & Receive",
+          desc: "Streamlined transaction flows with QR scanning, address book, and gas fee optimization across multiple blockchain networks.",
+        },
+        {
+          icon: "monitoring",
+          title: "Real-Time Portfolio Tracking",
+          desc: "Live price feeds, interactive Chart.js visualizations, token distribution breakdowns, and historical performance analytics.",
+        },
+        {
+          icon: "apps",
+          title: "Integrated DApp Store",
+          desc: "Built-in decentralized application marketplace with direct wallet connectivity, allowing users to interact with DeFi protocols seamlessly.",
+        },
+        {
+          icon: "security",
+          title: "ERC-1155 Multi-Token Support",
+          desc: "Native support for ERC-1155 standard enabling efficient batch transfers and management of both fungible and non-fungible tokens.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "The dashboard became the go-to tool for the client's user base, reducing average transaction time by 60% and increasing daily active wallet interactions by 3x within the first quarter post-launch.",
+      testimonial: {
+        quote:
+          "Ali delivered exactly what we needed. The dashboard is fast, clean, and our users love it. Transaction volume doubled within weeks of launch.",
+        author: "Quincy Chapman",
+        role: "Founder & CEO",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/crypto-wallet/dashboard.png", caption: "Main Dashboard" },
+      { src: "/images/project-pics/crypto-wallet/portfolio.png", caption: "Portfolio Analytics" },
+      { src: "/images/project-pics/crypto-wallet/transactions.png", caption: "Transaction History" },
+      { src: "/images/project-pics/crypto-wallet/wallet-overview.png", caption: "Wallet Overview" },
+      { src: "/images/project-pics/crypto-wallet/dapp-store.png", caption: "DApp Store" },
+    ],
+    techStack: ["Nuxt.js", "Vuetify", "Chart.js", "Web3.js", "ERC-1155", "Node.js"],
+    nextProjectSlug: "nft-marketplace",
+  },
+  {
+    slug: "nft-marketplace",
+    title: "NFT Nexus",
+    subtitle: "NFT Marketplace for Digital Art & Collectibles",
+    heroImage: "/images/project-pics/nft-marketplace/marketplace-home.png",
+    tags: ["Web3", "React", "ERC-721", "Marketplace"],
+    cardTags: ["Web3", "Marketplace"],
+    cardDesc:
+      "A futuristic NFT marketplace for buying, selling, and trading digital art, gaming assets, music, and collectibles with a sleek dark-themed UI.",
+    stats: [
+      { value: "10K+", label: "NFTs Listed", icon: "collections" },
+      { value: "< 2s", label: "Listing Speed", icon: "bolt" },
+      { value: "4", label: "Asset Categories", icon: "category" },
+      { value: "ERC-721", label: "Token Standard", icon: "token" },
+    ],
+    challenge: [
+      "The NFT space lacked marketplaces that combined a premium visual experience with genuinely fast, low-friction trading flows.",
+      "Existing platforms felt utilitarian. Collectors and creators wanted a marketplace that matched the artistic quality of the assets being traded.",
+    ],
+    challengeCards: [
+      {
+        icon: "palette",
+        title: "Premium Visual Experience",
+        desc: "Collectors expected gallery-quality presentation for high-value digital art, not generic card grids with thumbnail previews.",
+      },
+      {
+        icon: "swap_horiz",
+        title: "Frictionless Trading",
+        desc: "Multi-step wallet approvals and slow listing flows frustrated sellers. Every extra click meant lost listings and abandoned transactions.",
+      },
+      {
+        icon: "category",
+        title: "Multi-Category Support",
+        desc: "Digital art, gaming items, music, and collectibles each have different metadata schemas and display requirements.",
+      },
+    ],
+    solution: {
+      description:
+        "Designed and built a fully functional NFT marketplace with a dark-themed, futuristic UI that puts the artwork front and center. Built with React and Tailwind CSS for pixel-perfect responsiveness, integrated with Web3.js and ERC-721 for secure on-chain ownership, the platform supports multi-category browsing, instant wallet connectivity, and streamlined buy/sell/auction flows.",
+      image: "/images/project-pics/nft-marketplace/marketplace-explore.png",
+      features: [
+        {
+          icon: "storefront",
+          title: "Multi-Category Marketplace",
+          desc: "Dedicated sections for digital art, gaming assets, music NFTs, and collectibles, each with category-specific metadata and filters.",
+        },
+        {
+          icon: "gavel",
+          title: "Auction & Fixed Price",
+          desc: "Flexible listing options including timed auctions with reserve prices and instant buy-now fixed-price sales.",
+        },
+        {
+          icon: "account_balance_wallet",
+          title: "Seamless Wallet Integration",
+          desc: "One-click wallet connect with MetaMask and WalletConnect, plus real-time balance and transaction status updates.",
+        },
+        {
+          icon: "verified",
+          title: "ERC-721 On-Chain Provenance",
+          desc: "Full ownership history and authenticity verification through ERC-721 smart contracts with transparent on-chain records.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "The marketplace launched to strong reception from the creator community. The premium dark UI became a differentiator, with users consistently praising the visual experience and smooth trading flow.",
+      testimonial: {
+        quote:
+          "Ali built exactly the marketplace we envisioned. The dark futuristic design sets us apart and our creators love how their art looks on the platform. Trading volume exceeded our first-month targets.",
+        author: "Aldrey John Arellano",
+        role: "Project Lead",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/nft-marketplace/marketplace-home.png", caption: "Marketplace Homepage", tall: true },
+      { src: "/images/project-pics/nft-marketplace/marketplace-explore.png", caption: "Explore & Collections", tall: true },
+    ],
+    techStack: ["React", "Tailwind CSS", "Web3.js", "ERC-721", "Node.js", "Ethereum"],
+    nextProjectSlug: "campaign-builder",
+  },
+  {
+    slug: "campaign-builder",
+    title: "ScribeAI",
+    subtitle: "AI Campaign Management Platform",
+    heroImage: "/images/project-pics/campaign-builder/campaign-library.png",
+    tags: ["SaaS", "AI/ML", "Laravel", "React"],
+    cardTags: ["SaaS", "AI/ML"],
+    cardDesc:
+      "An AI-powered campaign management platform with a 3-module system (Train, Build, Review) and 6-step campaign workflow for data-driven marketing at scale.",
+    stats: [
+      { value: "3", label: "Core Modules", icon: "hub" },
+      { value: "11", label: "Training Steps", icon: "school" },
+      { value: "6", label: "Campaign Steps", icon: "campaign" },
+      { value: "100%", label: "Figma Match", icon: "design_services" },
+    ],
+    challenge: [
+      "Marketing teams lacked a unified platform that could train AI on their brand data, build campaigns with intelligent recommendations, and review performance in a single workflow.",
+      "Existing tools offered fragmented experiences. Users had to jump between analytics, creative tools, and campaign managers, losing context and efficiency at every step.",
+    ],
+    challengeCards: [
+      {
+        icon: "model_training",
+        title: "Complex Training Pipeline",
+        desc: "Users needed to configure 11 interconnected steps covering objectives, brand, personas, products, customers, cohorts, and more before launching any campaign.",
+      },
+      {
+        icon: "route",
+        title: "Multi-Step Workflow",
+        desc: "Campaign creation required a structured 6-step wizard from directive selection through asset delivery, each with validation, draft saving, and progression logic.",
+      },
+      {
+        icon: "dashboard_customize",
+        title: "Real-Time Review System",
+        desc: "Stakeholders needed a live dashboard to monitor campaign performance, track status, and drill into individual campaign analytics without leaving the platform.",
+      },
+    ],
+    solution: {
+      description:
+        "Designed and built a comprehensive AI campaign management platform with three tightly integrated modules. The Train module guides users through an 11-step data foundation process. The Build module delivers a 6-step campaign creation wizard with auto-save, step validation, and progressive disclosure. The Review module provides real-time dashboards with campaign analytics, status tracking, and performance deep-dives. Every screen was built to match Figma designs pixel-for-pixel.",
+      image: "/images/project-pics/campaign-builder/cohort-campaign-selection.png",
+      features: [
+        {
+          icon: "school",
+          title: "11-Step AI Training Pipeline",
+          desc: "Comprehensive setup covering objectives, brand guidelines, personas, products, customers, cohorts, directives, messaging, channels, rules, and integrations.",
+        },
+        {
+          icon: "auto_fix_high",
+          title: "6-Step Campaign Wizard",
+          desc: "Structured workflow: Directive Selection, Cohort Selection, Core Creative, Channels, Plan Generation, and Assets & Deliverables with draft saving at every step.",
+        },
+        {
+          icon: "monitoring",
+          title: "Performance Review Dashboard",
+          desc: "Campaign overview with summary statistics, search/filter, status tracking, and deep-dive performance metrics for each campaign.",
+        },
+        {
+          icon: "save",
+          title: "Auto-Save & Draft Recovery",
+          desc: "Persistent draft saving at each workflow step with browser recovery, ensuring users never lose progress during campaign creation.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "The platform launched as a fully functional MVP that demonstrated the complete user journey from AI training through campaign review. The pixel-perfect UI matched Figma designs exactly, and the structured workflow reduced campaign setup time significantly.",
+      testimonial: {
+        quote:
+          "Ali turned our complex vision into a polished, working product. The 3-module system flows exactly how we designed it, and the campaign wizard is intuitive even for non-technical marketers. Exceeded our expectations.",
+        author: "Jake Berton",
+        role: "Founder, ScribeAI",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/campaign-builder/campaign-library.png", caption: "Campaign Library" },
+      { src: "/images/project-pics/campaign-builder/cohort-campaign-selection.png", caption: "Cohort Campaign Selection" },
+      { src: "/images/project-pics/campaign-builder/cohort-library.png", caption: "Cohort Library" },
+      { src: "/images/project-pics/campaign-builder/customer-library.png", caption: "Customer Library" },
+      { src: "/images/project-pics/campaign-builder/product-library.png", caption: "Product Library" },
+    ],
+    techStack: ["React", "Laravel", "Tailwind CSS", "Chart.js", "MySQL", "Redis"],
+    nextProjectSlug: "aladdin-catering",
+  },
+  {
+    slug: "aladdin-catering",
+    title: "Aladdin Mediterranean Cuisine",
+    subtitle: "Restaurant Website & Online Ordering System",
+    heroImage: "/images/project-pics/Aladdin-catering/home.png",
+    tags: ["SaaS", "Vue.js", "E-commerce"],
+    cardTags: ["E-commerce", "Vue.js"],
+    cardDesc:
+      "Full-stack restaurant website and catering ordering system for Houston's beloved halal Mediterranean restaurant, serving fresh food since 2006.",
+    stats: [
+      { value: "2", label: "Locations Served", icon: "location_on" },
+      { value: "18+", label: "Years in Business", icon: "schedule" },
+      { value: "100%", label: "Halal Certified", icon: "verified" },
+      { value: "A-Z", label: "Built from Scratch", icon: "construction" },
+    ],
+    challenge: [
+      "Aladdin Mediterranean Cuisine needed a modern digital presence that matched the quality of their food. Their existing setup lacked online ordering capabilities, making it difficult to serve the growing demand for catering and takeout orders.",
+      "The restaurant required a seamless system that could handle dine-in menu browsing, catering orders with custom configurations, and a smooth checkout flow, all while reflecting the warmth and authenticity of their Mediterranean brand.",
+    ],
+    challengeCards: [
+      {
+        icon: "shopping_cart",
+        title: "Online Ordering System",
+        desc: "Building a complete catering and takeout ordering flow with cart management, item customization, and real-time order processing for two restaurant locations.",
+      },
+      {
+        icon: "restaurant_menu",
+        title: "Dynamic Menu Management",
+        desc: "Creating an intuitive menu system that showcases diverse Mediterranean offerings across categories with dietary labels, pricing tiers, and seasonal specials.",
+      },
+      {
+        icon: "devices",
+        title: "Multi-Location Support",
+        desc: "Serving both Montrose and Garden Oaks locations with location-specific menus, operating hours, and delivery zones through a unified platform.",
+      },
+    ],
+    solution: {
+      description:
+        "Designed and developed a complete restaurant website and online ordering platform from scratch using Vue.js. The solution features a visually rich homepage showcasing the brand story, a dynamic menu with filtering and categories, a full catering ordering system with cart and checkout, and location-specific pages. Every component was built for speed, mobile responsiveness, and conversion optimization.",
+      image: "/images/project-pics/Aladdin-catering/catering-menu.png",
+      features: [
+        {
+          icon: "storefront",
+          title: "Brand-First Design",
+          desc: "Immersive homepage with hero imagery, customer testimonials, press features, and the brand story to build trust and drive conversions.",
+        },
+        {
+          icon: "add_shopping_cart",
+          title: "Catering Order System",
+          desc: "Complete cart-based ordering flow with item selection, quantity management, add-to-cart functionality, and streamlined checkout for catering events.",
+        },
+        {
+          icon: "menu_book",
+          title: "Interactive Menu Experience",
+          desc: "Beautifully designed menu pages with category navigation, dish descriptions, pricing, and dietary information for both dine-in and catering.",
+        },
+        {
+          icon: "phone_android",
+          title: "Mobile-First & Fast",
+          desc: "Fully responsive design optimized for mobile ordering, with fast load times and smooth interactions for on-the-go customers.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "The platform launched as a polished, production-ready website that transformed Aladdin's digital presence. The online ordering system enabled catering customers to place orders seamlessly, while the brand-rich design drove increased foot traffic and online engagement across both Houston locations.",
+      testimonial: {
+        quote:
+          "Ali is an exceptional developer who exceeded all our expectations! He created a catering website in Vue.js for us from A-Z with incredible precision and attention to detail. His technical expertise, communication, and dedication were evident throughout the project. Not only did he deliver a sleek, functional, and user-friendly design, but he also ensured that every feature worked perfectly. If you're looking for a professional who can handle everything with perfection, Ali is your guy.",
+        author: "Ali Nehhas",
+        role: "Owner, Aladdin Mediterranean Cuisine",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/Aladdin-catering/home.png", caption: "Homepage", tall: true },
+      { src: "/images/project-pics/Aladdin-catering/menu.png", caption: "Full Menu", tall: true },
+      { src: "/images/project-pics/Aladdin-catering/catering-menu.png", caption: "Catering Menu", tall: true },
+      { src: "/images/project-pics/Aladdin-catering/about-us.png", caption: "About Us", tall: true },
+      { src: "/images/project-pics/Aladdin-catering/add-to-cart.png", caption: "Add to Cart" },
+    ],
+    techStack: ["Vue.js", "Vuetify", "Nuxt.js", "Node.js", "JavaScript", "Stripe"],
     nextProjectSlug: "custom-enterprise-crm",
   },
 ];

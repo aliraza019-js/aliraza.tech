@@ -6,6 +6,7 @@ import {
   getProjectSlugs,
 } from "@/data/projects";
 import ProjectCover from "@/components/ProjectCover";
+import GalleryTallCard from "@/components/GalleryTallCard";
 import Navbar from "@/components/Navbar";
 
 export function generateStaticParams() {
@@ -234,35 +235,48 @@ export default async function ProjectDetailPage({
                   A Closer Look
                 </h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.gallery.map((item, i) => (
-                  <div
-                    key={i}
-                    className={`group relative rounded-2xl overflow-hidden border border-outline-variant/10 bg-surface-container ${
-                      item.tall ? "md:col-span-2" : ""
-                    }`}
-                  >
-                    <div className={item.tall ? "max-h-[600px] overflow-hidden" : ""}>
-                      <Image
-                        src={item.src}
-                        alt={item.caption}
-                        width={item.tall ? 1600 : 800}
-                        height={item.tall ? 900 : 500}
-                        className={`w-full transition-transform duration-500 group-hover:scale-[1.02] ${
-                          item.tall ? "object-cover object-top" : "object-cover"
-                        }`}
-                        loading="lazy"
-                        sizes={item.tall ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
-                        quality={75}
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <p className="absolute bottom-4 left-4 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {item.caption}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {(() => {
+                const tallItems = project.gallery!.filter((item) => item.tall);
+                const shortItems = project.gallery!.filter((item) => !item.tall);
+                return (
+                  <>
+                    {/* Tall images: 2-column grid with capped preview + expand */}
+                    {tallItems.length > 0 && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        {tallItems.map((item, i) => (
+                          <GalleryTallCard key={`tall-${i}`} item={item} />
+                        ))}
+                      </div>
+                    )}
+                    {/* Short images: standard 2-column grid */}
+                    {shortItems.length > 0 && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {shortItems.map((item, i) => (
+                          <div
+                            key={`short-${i}`}
+                            className="group relative rounded-2xl overflow-hidden border border-outline-variant/10 bg-surface-container"
+                          >
+                            <Image
+                              src={item.src}
+                              alt={item.caption}
+                              width={800}
+                              height={500}
+                              className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
+                              loading="lazy"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              quality={75}
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                            <p className="absolute bottom-4 left-4 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              {item.caption}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </section>
         )}
@@ -399,7 +413,7 @@ export default async function ProjectDetailPage({
             </div>
           </div>
           <div className="border-t border-outline-variant/10 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-on-surface-variant">Copyright @2025, All Rights Reserved</div>
+            <div className="text-sm text-on-surface-variant">Copyright @2026, All Rights Reserved</div>
             <div className="flex items-center gap-6 text-sm text-on-surface-variant font-medium">
               <a href="https://www.upwork.com/freelancers/~01b8e90b25b218f09a" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Upwork</a>
               <a href="https://www.fiverr.com/aliraza019" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Fiverr</a>

@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ali Raza | Lead Software Engineer",
+  title: "Ali Raza | I Build What Scales",
   description:
     "I build fast, scalable web apps that convert users and grow revenue. 7+ years delivering full-stack solutions for startups to enterprise. Let's talk about your project.",
   icons: {

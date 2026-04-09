@@ -71,6 +71,34 @@ const PROJECT_THEMES: Record<string, CoverTheme> = {
     icon: "cloud",
     pattern: "radial-gradient(circle at 20% 75%, rgba(96,165,250,0.14) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(251,191,36,0.06) 0%, transparent 40%)",
   },
+  "crypto-wallet": {
+    gradient: "from-[#0a0f1e] via-[#101828] to-[#0e1a30]",
+    accent: "#F97316",
+    iconBorder: "#22D3EE",
+    icon: "currency_bitcoin",
+    pattern: "radial-gradient(circle at 25% 80%, rgba(249,115,22,0.14) 0%, transparent 50%), radial-gradient(circle at 75% 20%, rgba(34,211,238,0.06) 0%, transparent 40%)",
+  },
+  "nft-marketplace": {
+    gradient: "from-[#120020] via-[#1a0030] to-[#0d001a]",
+    accent: "#E879F9",
+    iconBorder: "#67E8F9",
+    icon: "diamond",
+    pattern: "radial-gradient(circle at 20% 80%, rgba(232,121,249,0.14) 0%, transparent 50%), radial-gradient(circle at 80% 15%, rgba(103,232,249,0.06) 0%, transparent 40%)",
+  },
+  "campaign-builder": {
+    gradient: "from-[#0f1a0a] via-[#162210] to-[#1a2a14]",
+    accent: "#84CC16",
+    iconBorder: "#38BDF8",
+    icon: "campaign",
+    pattern: "radial-gradient(circle at 25% 80%, rgba(132,204,22,0.14) 0%, transparent 50%), radial-gradient(circle at 75% 15%, rgba(56,189,248,0.06) 0%, transparent 40%)",
+  },
+  "aladdin-catering": {
+    gradient: "from-[#1a0f00] via-[#2a1a08] to-[#1a1000]",
+    accent: "#F59E0B",
+    iconBorder: "#EF4444",
+    icon: "restaurant",
+    pattern: "radial-gradient(circle at 30% 75%, rgba(245,158,11,0.14) 0%, transparent 50%), radial-gradient(circle at 70% 20%, rgba(239,68,68,0.06) 0%, transparent 40%)",
+  },
 };
 
 const FALLBACK_THEME: CoverTheme = {

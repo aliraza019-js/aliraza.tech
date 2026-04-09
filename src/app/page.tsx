@@ -13,6 +13,7 @@ const ParticleGrid = dynamic(() => import("@/components/ParticleGrid"), { ssr: f
 const TiltCard = dynamic(() => import("@/components/TiltCard"), { ssr: false });
 const GitHubActivity = dynamic(() => import("@/components/GitHubActivity"), { ssr: false });
 const ProjectCover = dynamic(() => import("@/components/ProjectCover"), { ssr: false });
+const ProjectGrid = dynamic(() => import("@/components/ProjectGrid"), { ssr: false });
 import Navbar from "@/components/Navbar";
 import {
   ReactIcon,
@@ -108,6 +109,20 @@ export default function Home() {
         gsap.utils.toArray<HTMLElement>(".hero-floating > div").forEach((badge, i) => {
           gsap.to(badge, {
             y: -6, duration: 2.2 + i * 0.3, repeat: -1, yoyo: true, ease: "sine.inOut", delay: i * 0.4,
+          });
+        });
+
+        // Stat counters: fast start, slow finish
+        el.querySelectorAll<HTMLElement>(".stat-counter").forEach((counter) => {
+          const end = parseInt(counter.dataset.end || "0", 10);
+          const suffix = counter.dataset.suffix || "";
+          const obj = { val: 0 };
+          gsap.to(obj, {
+            val: end,
+            duration: end > 100 ? 2.2 : 1.4,
+            ease: "power3.out",
+            delay: 0.8,
+            onUpdate: () => { counter.textContent = `${Math.round(obj.val)}${suffix}`; },
           });
         });
 
@@ -333,9 +348,9 @@ export default function Home() {
               {/* Floating stat badges */}
               <div className="hero-floating absolute -left-10 top-1/2 -translate-y-1/2 flex flex-col gap-5 z-20">
                 {[
-                  { icon: "calendar_month", value: "7+", label: "Years of Experience" },
-                  { icon: "task_alt", value: "1K+", label: "Project Complete" },
-                  { icon: "sentiment_satisfied", value: "100%", label: "Client Satisfaction" },
+                  { icon: "calendar_month", end: 7, suffix: "+", label: "Years of Experience" },
+                  { icon: "task_alt", end: 523, suffix: "+", label: "Project Complete" },
+                  { icon: "sentiment_satisfied", end: 100, suffix: "%", label: "Client Satisfaction" },
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -348,8 +363,8 @@ export default function Home() {
                       >
                         {stat.icon}
                       </span>
-                      <span className="text-2xl font-black text-white font-headline leading-none">
-                        {stat.value}
+                      <span className="text-2xl font-black text-white font-headline leading-none stat-counter" data-end={stat.end} data-suffix={stat.suffix}>
+                        0{stat.suffix}
                       </span>
                     </div>
                     <p className="text-xs text-on-surface-variant font-medium tracking-wide">
@@ -585,95 +600,7 @@ export default function Home() {
               </h2>
               <div className="h-px bg-gradient-to-r from-primary-container to-transparent w-full" />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {[
-                {
-                  slug: "custom-enterprise-crm",
-                  title: "Ethos ESG Platform",
-                  desc: "Enterprise ESG compliance platform with environmental reporting, dynamic forms, and shared packages for multi-company governance.",
-                  tags: ["SaaS", "React"],
-                },
-                {
-                  slug: "self-hosted-gateway",
-                  title: "Self-Hosted Payment Gateway",
-                  desc: "Removing friction between merchants and customers while encrypting transactional data for a risk-free payment experience.",
-                  tags: ["Fintech", "Vue.js"],
-                },
-                {
-                  slug: "sparkdoc-ai",
-                  title: "SparkDoc AI",
-                  desc: "AI-powered collaborative editor with summarization, knowledge extraction, and real-time document insights.",
-                  tags: ["AI/ML", "Next.js"],
-                },
-                {
-                  slug: "3d-generative-nft-builder",
-                  title: "3D NFT Builder",
-                  desc: "Design and personalize your 3D avatar with unique assets, accessories, and outfits in a seamless NFT marketplace.",
-                  tags: ["Web3", "Three.js"],
-                },
-                {
-                  slug: "ducorr",
-                  title: "Ducorr",
-                  desc: "Digital platform for UAE & KSA's leading cathodic protection specialists with product catalog, project showcase, and e-commerce.",
-                  tags: ["Corporate", "Next.js"],
-                },
-                {
-                  slug: "autogather",
-                  title: "AutoGather",
-                  desc: "AI-powered platform that helps marketers search, evaluate, and collect influencers across Instagram, YouTube, and TikTok.",
-                  tags: ["AI/ML", "SaaS"],
-                },
-                {
-                  slug: "forborga",
-                  title: "Forborga",
-                  desc: "Virtual card platform with spend limits, subscription management, and secure crypto transactions via QB.se.",
-                  tags: ["Fintech", "Vue.js"],
-                },
-                {
-                  slug: "managed-hosting-dashboard",
-                  title: "Hosting Management",
-                  desc: "Fully managed WordPress hosting platform serving 17,000+ clients with real-time monitoring and 24/7 expert support.",
-                  tags: ["SaaS", "Cloud"],
-                },
-              ].map((project) => (
-                <div
-                  key={project.title}
-                  className="project-card group relative bg-surface-container-low rounded-[2rem] overflow-hidden border border-outline-variant/10"
-                >
-                  <div className="relative aspect-video overflow-hidden">
-                    <ProjectCover slug={project.slug} title={project.title} />
-                    <div className="absolute bottom-6 left-6 flex gap-2 z-10">
-                      {project.tags.map((tag, j) => (
-                        <span
-                          key={j}
-                          className={
-                            j === 0
-                              ? "px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-black uppercase"
-                              : "px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-[10px] font-black uppercase"
-                          }
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="p-8">
-                    <h3 className="font-headline font-bold text-xl mb-3">
-                      {project.title}
-                    </h3>
-                    <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                      {project.desc}
-                    </p>
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="block w-full py-3 rounded-xl border border-primary-container/20 text-primary-fixed font-bold hover:bg-primary-container hover:text-on-primary-container transition-all text-center"
-                    >
-                      View Project
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <ProjectGrid />
           </div>
         </section>
 
@@ -992,7 +919,7 @@ export default function Home() {
           {/* Bottom bar */}
           <div className="border-t border-outline-variant/10 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-on-surface-variant">
-              Copyright @2025, All Rights Reserved
+              Copyright @2026, All Rights Reserved
             </div>
             <div className="flex items-center gap-6 text-sm text-on-surface-variant font-medium">
               <a
