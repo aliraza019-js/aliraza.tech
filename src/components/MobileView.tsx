@@ -217,10 +217,10 @@ export default function MobileView() {
               </div>
               <div className="text-center">
                 <p className="text-2xl font-black text-primary-fixed font-headline">
-                  523+
+                  13
                 </p>
                 <p className="text-[10px] uppercase tracking-widest text-white/50">
-                  Delivered
+                  Production Projects
                 </p>
               </div>
               <div className="text-right">

@@ -349,7 +349,7 @@ export default function Home() {
               <div className="hero-floating absolute -left-10 top-1/2 -translate-y-1/2 flex flex-col gap-5 z-20">
                 {[
                   { icon: "calendar_month", end: 7, suffix: "+", label: "Years of Experience" },
-                  { icon: "task_alt", end: 523, suffix: "+", label: "Project Complete" },
+                  { icon: "task_alt", end: 13, suffix: "", label: "Production Level Projects" },
                   { icon: "sentiment_satisfied", end: 100, suffix: "%", label: "Client Satisfaction" },
                 ].map((stat) => (
                   <div

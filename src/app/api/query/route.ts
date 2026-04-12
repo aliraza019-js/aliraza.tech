@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const apiKey = process.env.RESEND_API_KEY;
+const resend = apiKey ? new Resend(apiKey) : null;
 
 const TO = "alir033397@gmail.com";
 // TODO: Once aliraza.tech is verified on Resend, change TO back to "contact@aliraza.tech"
@@ -51,6 +52,14 @@ export async function POST(req: Request) {
     const email = body.email?.trim();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "Valid email is required." }, { status: 400 });
+    }
+
+    if (!resend) {
+      console.error("RESEND_API_KEY is not configured");
+      return NextResponse.json(
+        { error: "Email service is not configured. Please try again later." },
+        { status: 500 },
+      );
     }
 
     const { error: sendError } = await resend.emails.send({

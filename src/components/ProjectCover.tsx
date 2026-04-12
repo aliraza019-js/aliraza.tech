@@ -99,6 +99,13 @@ const PROJECT_THEMES: Record<string, CoverTheme> = {
     icon: "restaurant",
     pattern: "radial-gradient(circle at 30% 75%, rgba(245,158,11,0.14) 0%, transparent 50%), radial-gradient(circle at 70% 20%, rgba(239,68,68,0.06) 0%, transparent 40%)",
   },
+  "efxpro": {
+    gradient: "from-[#0a0f1a] via-[#0d1525] to-[#06091a]",
+    accent: "#3B82F6",
+    iconBorder: "#22D3EE",
+    icon: "candlestick_chart",
+    pattern: "radial-gradient(circle at 20% 80%, rgba(59,130,246,0.14) 0%, transparent 50%), radial-gradient(circle at 80% 15%, rgba(34,211,238,0.06) 0%, transparent 40%)",
+  },
 };
 
 const FALLBACK_THEME: CoverTheme = {

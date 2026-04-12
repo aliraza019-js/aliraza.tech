@@ -1095,6 +1095,88 @@ export const projects: Project[] = [
       { src: "/images/project-pics/Aladdin-catering/add-to-cart.png", caption: "Add to Cart" },
     ],
     techStack: ["Vue.js", "Vuetify", "Nuxt.js", "Node.js", "JavaScript", "Stripe"],
+    nextProjectSlug: "efxpro",
+  },
+  {
+    slug: "efxpro",
+    title: "efxPro",
+    subtitle: "Forex & Global Markets Trading Platform",
+    heroImage: "/images/project-pics/efxpro/home.png",
+    tags: ["Fintech", "SaaS", "Trading"],
+    cardTags: ["Fintech", "Trading"],
+    cardDesc:
+      "Full-featured forex and CFD trading platform with real-time market data, multi-account management, social trading, and regulatory-compliant onboarding.",
+    stats: [
+      { value: "1000+", label: "Trading Instruments", icon: "candlestick_chart" },
+      { value: "150+", label: "Countries Served", icon: "public" },
+      { value: "85M+", label: "Trades Executed", icon: "swap_horiz" },
+      { value: "0.12s", label: "Avg Execution Time", icon: "speed" },
+    ],
+    challenge: [
+      "efxPro needed a modern, high-performance trading platform that could handle real-time market data feeds, complex account management (MAM/PAMM), and regulatory-compliant onboarding across 150+ countries.",
+      "The platform required lightning-fast execution, live pricing widgets, economic calendars, and a seamless experience across forex, metals, indices, energies, and futures markets, all while maintaining strict financial compliance standards.",
+    ],
+    challengeCards: [
+      {
+        icon: "trending_up",
+        title: "Real-Time Market Data",
+        desc: "Streaming live prices for 1,000+ instruments across forex, metals, indices, energies, and futures with sub-second execution times.",
+      },
+      {
+        icon: "account_balance",
+        title: "Multi-Account Architecture",
+        desc: "Supporting Standard and Elite accounts with MAM/PAMM capabilities, social trading integration, and partner IB program management.",
+      },
+      {
+        icon: "gavel",
+        title: "Regulatory Compliance",
+        desc: "AI-powered onboarding with KYC verification, risk disclaimers, and region-specific compliance for a globally regulated broker.",
+      },
+    ],
+    solution: {
+      description:
+        "Built a comprehensive trading platform from the ground up featuring a high-impact landing page with animated market widgets, real-time trending markets display, and a streamlined 3-step account opening flow. The platform integrates live economic calendars, news feeds, and detailed product pages for every asset class. Every screen was designed for conversion optimization with clear CTAs, trust signals, and performance metrics prominently displayed.",
+      image: "/images/project-pics/efxpro/detail-page.png",
+      features: [
+        {
+          icon: "candlestick_chart",
+          title: "Live Trading Widgets",
+          desc: "Real-time price tickers, trending markets section, and interactive charts for forex, metals, indices, energies, and futures.",
+        },
+        {
+          icon: "people",
+          title: "Social & Copy Trading",
+          desc: "Integrated social trading platform with MAM and PAMM account management for professional money managers and followers.",
+        },
+        {
+          icon: "newspaper",
+          title: "Economic Intelligence",
+          desc: "Built-in economic calendar and news feed providing traders with real-time market-moving events and analysis.",
+        },
+        {
+          icon: "rocket_launch",
+          title: "3-Step Onboarding",
+          desc: "AI-powered account registration flow: Register, Fund, Trade. Live in minutes with automated KYC verification.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "The platform launched serving traders across 150+ countries with 1,000+ instruments, executing over 85 million trades with an average execution time of 0.12 seconds. The modern, conversion-optimized design significantly improved account signups and trading engagement.",
+      testimonial: {
+        quote:
+          "It was a great experience working with Ali. He is highly professional, and his development skill set is truly impressive. Moreover, he is extremely responsive and communicative throughout the entire project. From start to finish, I didn't encounter any issues. I'm definitely looking forward to working with him again in the future and would 100% recommend him.",
+        author: "Imran",
+        role: "Founder, efxPro",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/efxpro/home.png", caption: "Homepage", tall: true },
+      { src: "/images/project-pics/efxpro/account.png", caption: "Account Types", tall: true },
+      { src: "/images/project-pics/efxpro/detail-page.png", caption: "Product Detail", tall: true },
+      { src: "/images/project-pics/efxpro/economic-news.png", caption: "Economic News", tall: true },
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "WebSockets"],
     nextProjectSlug: "custom-enterprise-crm",
   },
 ];

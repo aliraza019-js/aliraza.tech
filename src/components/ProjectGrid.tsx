@@ -82,6 +82,12 @@ const ALL_PROJECTS = [
     desc: "Full-stack restaurant website and catering ordering system for Houston's beloved halal Mediterranean restaurant since 2006.",
     tags: ["E-commerce", "Vue.js"],
   },
+  {
+    slug: "efxpro",
+    title: "efxPro Trading Platform",
+    desc: "Full-featured forex and CFD trading platform with real-time market data, 1000+ instruments, and social trading across 150+ countries.",
+    tags: ["Fintech", "Trading"],
+  },
 ];
 
 const PAGE_SIZE = 6;
