@@ -131,6 +131,11 @@ export default function ProjectCover({ slug, title, variant = "card" }: ProjectC
     const el = containerRef.current;
     if (!el) return;
 
+    const targets = el.querySelectorAll(
+      ".cover-icon, .cover-title, .cover-divider, .cover-watermark, .cover-tag, .cover-corner, .cover-glow"
+    );
+    gsap.set(targets, { visibility: "visible", opacity: 1 });
+
     const ctx = gsap.context(() => {
       const iconBox = el.querySelector(".cover-icon");
       const titleEl = el.querySelector(".cover-title");
@@ -149,25 +154,25 @@ export default function ProjectCover({ slug, title, variant = "card" }: ProjectC
 
       tl.fromTo(
         glow,
-        { scale: 0.6, autoAlpha: 0 },
-        { scale: 1, autoAlpha: 1, duration: 0.8 }
+        { scale: 0.6, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8 }
       )
         .fromTo(
           iconBox,
-          { y: 20, autoAlpha: 0, scale: 0.8 },
-          { y: 0, autoAlpha: 1, scale: 1, duration: 0.5 },
+          { y: 20, opacity: 0, scale: 0.8 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.5 },
           "-=0.4"
         )
         .fromTo(
           titleEl,
-          { y: 14, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.4 },
+          { y: 14, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4 },
           "-=0.2"
         )
         .fromTo(
           divider,
-          { scaleX: 0, autoAlpha: 0 },
-          { scaleX: 1, autoAlpha: 1, duration: 0.35 },
+          { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.35 },
           "-=0.15"
         )
         .fromTo(
@@ -178,14 +183,14 @@ export default function ProjectCover({ slug, title, variant = "card" }: ProjectC
         )
         .fromTo(
           watermark,
-          { x: 10, autoAlpha: 0 },
-          { x: 0, autoAlpha: 1, duration: 0.35 },
+          { x: 10, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.35 },
           "-=0.2"
         )
         .fromTo(
           tag,
-          { x: -10, autoAlpha: 0 },
-          { x: 0, autoAlpha: 1, duration: 0.35 },
+          { x: -10, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.35 },
           "-=0.3"
         );
 
