@@ -277,7 +277,7 @@ export const projects: Project[] = [
     solution: {
       description:
         "I led the engineering of SparkDoc, a next-generation collaborative editor that integrates AI-powered summarization, smart search, citation analysis, and real-time collaboration into a single platform built on Next.js, Nest.js, and AWS.",
-      image: "/images/project-pics/sparkdoc/editor-citation.png",
+      image: "/images/project-pics/sparkdoc/dashboard.png",
       features: [
         {
           icon: "auto_awesome",
