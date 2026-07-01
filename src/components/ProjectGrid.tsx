@@ -77,6 +77,12 @@ const ALL_PROJECTS = [
     tags: ["SaaS", "AI/ML"],
   },
   {
+    slug: "leadpulse",
+    title: "LeadPulse",
+    desc: "Fullstack lead capture platform with smart scoring, automated SMS/email follow-ups, and admin command center for real estate.",
+    tags: ["Next.js", "Automation"],
+  },
+  {
     slug: "aladdin-catering",
     title: "Aladdin Mediterranean",
     desc: "Full-stack restaurant website and catering ordering system for Houston's beloved halal Mediterranean restaurant since 2006.",

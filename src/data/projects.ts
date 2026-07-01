@@ -1012,6 +1012,88 @@ export const projects: Project[] = [
       { src: "/images/project-pics/campaign-builder/product-library.png", caption: "Product Library" },
     ],
     techStack: ["React", "Laravel", "Tailwind CSS", "Chart.js", "MySQL", "Redis"],
+    nextProjectSlug: "leadpulse",
+  },
+  {
+    slug: "leadpulse",
+    title: "LeadPulse: Real Estate Lead Capture & Follow-Up Platform",
+    subtitle: "Fullstack Lead Automation for Real Estate",
+    heroImage: "/images/project-pics/leadpulse/funnel-home.png",
+    tags: ["Next.js", "Fullstack", "CRM", "Automation"],
+    cardTags: ["Next.js", "Automation"],
+    cardDesc:
+      "Fullstack lead capture platform with smart scoring, automated SMS/email follow-ups, and a real-time admin command center — built for real estate agent Musab Amin.",
+    stats: [
+      { value: "<60s", label: "Instant lead response time", icon: "bolt" },
+      { value: "5-Step", label: "Automated nurture sequence", icon: "schedule" },
+      { value: "10", label: "Pipeline stages tracked", icon: "account_tree" },
+      { value: "A-Z", label: "Fullstack build from scratch", icon: "construction" },
+    ],
+    challenge: [
+      "Real estate agent Musab Amin was losing high-intent leads from online inquiries because follow-up was manual, slow, and inconsistent. Leads sat in email inboxes with no scoring, no pipeline tracking, and no automated nurture — meaning hot prospects went cold within minutes, especially after hours and during showings.",
+      "He needed a purpose-built system — not a patchwork of spreadsheets and disconnected tools. The solution had to capture leads from a conversion-optimized funnel, score and prioritize them instantly, fire personalized SMS and email follow-ups automatically, and give him a single command center to manage every deal from first touch to close.",
+    ],
+    challengeCards: [
+      {
+        icon: "hourglass_top",
+        title: "Slow Speed-to-Lead",
+        desc: "Leads from property inquiries went cold within minutes when Musab couldn't respond immediately during showings, closings, or after business hours.",
+      },
+      {
+        icon: "call_split",
+        title: "No Pipeline Visibility",
+        desc: "Buyer and seller leads were scattered with no structured stages — no way to distinguish hot prospects from long-term nurture contacts.",
+      },
+      {
+        icon: "mark_email_unread",
+        title: "Manual Follow-Up Burden",
+        desc: "Every SMS and email had to be written and sent manually, with no automated sequences to keep leads engaged over days and weeks.",
+      },
+    ],
+    solution: {
+      description:
+        "I designed and built LeadPulse from the ground up — a fullstack Next.js platform with Prisma and SQLite. The public funnel captures leads with intent, timeline, and budget fields. A scoring engine instantly rates every lead Hot, Warm, Lukewarm, or Cold. A 5-step automated follow-up engine fires instant SMS and email on capture, then nurtures over 7 days. The admin command center shows live stats, pipeline overview, and per-lead activity with stage management.",
+      image: "/images/project-pics/leadpulse/admin-dashboard.png",
+      features: [
+        {
+          icon: "web",
+          title: "Conversion-Optimized Lead Funnel",
+          desc: "Dark-themed real estate landing page with a multi-field capture form — name, email, phone, buying intent, timeline, budget, and property preferences — designed for high conversion.",
+        },
+        {
+          icon: "psychology",
+          title: "Smart Lead Scoring Engine",
+          desc: "Weighted scoring based on timeline urgency, buying intent, and budget range automatically assigns Hot, Warm, Lukewarm, or Cold priority to every incoming lead.",
+        },
+        {
+          icon: "sms",
+          title: "Automated Follow-Up Sequences",
+          desc: "5-step nurture pipeline: instant SMS + email on capture, day-1 SMS check-in, day-3 email with market update, and day-7 final re-engagement — all scheduled and processed automatically.",
+        },
+        {
+          icon: "dashboard",
+          title: "Admin Command Center",
+          desc: "Real-time dashboard with lead stats, pipeline stage breakdown, recent leads table with priority badges, follow-up progress tracking, and inline stage updates.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "LeadPulse launched as a fully functional fullstack product giving Musab Amin a complete lead automation system. Every inquiry now triggers instant follow-up within 60 seconds, leads are scored and prioritized automatically, and the 7-day nurture sequence runs without manual intervention — freeing the agent to focus on showings, negotiations, and closings.",
+      testimonial: {
+        quote:
+          "Ali built the entire system from scratch — the funnel, scoring, automations, and dashboard. Leads get followed up instantly even when I'm in a showing. I finally have one platform that captures, scores, and nurtures every inquiry automatically.",
+        author: "Musab Amin",
+        role: "Real Estate Agent",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/leadpulse/funnel-home.png", caption: "Lead Capture Funnel", tall: true },
+      { src: "/images/project-pics/leadpulse/lead-form.png", caption: "Property Inquiry Form", tall: true },
+      { src: "/images/project-pics/leadpulse/admin-dashboard.png", caption: "Admin Command Center", tall: true },
+      { src: "/images/project-pics/leadpulse/thank-you.png", caption: "Confirmation & Follow-Up Trigger" },
+    ],
+    techStack: ["Next.js", "TypeScript", "Prisma", "SQLite", "Tailwind CSS", "Zod", "date-fns"],
     nextProjectSlug: "aladdin-catering",
   },
   {

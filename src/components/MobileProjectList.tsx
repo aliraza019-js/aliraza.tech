@@ -21,6 +21,7 @@ const ALL_PROJECTS = [
   { slug: "crypto-wallet", category: "Web3 / Fintech", title: "CryptoVault Dashboard" },
   { slug: "nft-marketplace", category: "Web3 / Marketplace", title: "NFT Nexus Marketplace" },
   { slug: "campaign-builder", category: "SaaS / AI", title: "ScribeAI Campaign Manager" },
+  { slug: "leadpulse", category: "Next.js / Automation", title: "LeadPulse" },
   { slug: "aladdin-catering", category: "E-commerce / Vue.js", title: "Aladdin Mediterranean" },
   { slug: "efxpro", category: "Fintech / Trading", title: "efxPro Trading Platform" },
 ];

@@ -92,6 +92,13 @@ const PROJECT_THEMES: Record<string, CoverTheme> = {
     icon: "campaign",
     pattern: "radial-gradient(circle at 25% 80%, rgba(132,204,22,0.14) 0%, transparent 50%), radial-gradient(circle at 75% 15%, rgba(56,189,248,0.06) 0%, transparent 40%)",
   },
+  leadpulse: {
+    gradient: "from-[#1a0a2e] via-[#2d1050] to-[#1a0a2e]",
+    accent: "#D946EF",
+    iconBorder: "#F472B6",
+    icon: "bolt",
+    pattern: "radial-gradient(circle at 25% 80%, rgba(217,70,239,0.16) 0%, transparent 50%), radial-gradient(circle at 75% 15%, rgba(244,114,182,0.08) 0%, transparent 40%)",
+  },
   "aladdin-catering": {
     gradient: "from-[#1a0f00] via-[#2a1a08] to-[#1a1000]",
     accent: "#F59E0B",
