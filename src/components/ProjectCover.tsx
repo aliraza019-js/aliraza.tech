@@ -113,6 +113,27 @@ const PROJECT_THEMES: Record<string, CoverTheme> = {
     icon: "candlestick_chart",
     pattern: "radial-gradient(circle at 20% 80%, rgba(59,130,246,0.14) 0%, transparent 50%), radial-gradient(circle at 80% 15%, rgba(34,211,238,0.06) 0%, transparent 40%)",
   },
+  "voxa": {
+    gradient: "from-[#1a0a08] via-[#2a1210] to-[#1f0d0a]",
+    accent: "#FF6D5A",
+    iconBorder: "#38BDF8",
+    icon: "smart_toy",
+    pattern: "radial-gradient(circle at 25% 80%, rgba(255,109,90,0.16) 0%, transparent 50%), radial-gradient(circle at 75% 15%, rgba(56,189,248,0.06) 0%, transparent 40%)",
+  },
+  "fiscora": {
+    gradient: "from-[#1a1108] via-[#241708] to-[#1a0f08]",
+    accent: "#DA7756",
+    iconBorder: "#67E8C4",
+    icon: "insights",
+    pattern: "radial-gradient(circle at 25% 80%, rgba(218,119,86,0.16) 0%, transparent 50%), radial-gradient(circle at 75% 15%, rgba(103,232,196,0.06) 0%, transparent 40%)",
+  },
+  "helvia": {
+    gradient: "from-[#04140f] via-[#082019] to-[#051813]",
+    accent: "#2DD4BF",
+    iconBorder: "#FBBF24",
+    icon: "support_agent",
+    pattern: "radial-gradient(circle at 25% 80%, rgba(45,212,191,0.16) 0%, transparent 50%), radial-gradient(circle at 75% 15%, rgba(251,191,36,0.06) 0%, transparent 40%)",
+  },
 };
 
 const FALLBACK_THEME: CoverTheme = {

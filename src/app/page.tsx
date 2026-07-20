@@ -7,6 +7,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContactForm } from "@/hooks/useContactForm";
+import { projects } from "@/data/projects";
 
 const MobileView = dynamic(() => import("@/components/MobileView"), { ssr: false });
 const ParticleGrid = dynamic(() => import("@/components/ParticleGrid"), { ssr: false });
@@ -349,7 +350,7 @@ export default function Home() {
               <div className="hero-floating absolute -left-10 top-1/2 -translate-y-1/2 flex flex-col gap-5 z-20">
                 {[
                   { icon: "calendar_month", end: 7, suffix: "+", label: "Years of Experience" },
-                  { icon: "task_alt", end: 13, suffix: "", label: "Production Level Projects" },
+                  { icon: "task_alt", end: projects.length, suffix: "", label: "Production Level Projects" },
                   { icon: "sentiment_satisfied", end: 100, suffix: "%", label: "Client Satisfaction" },
                 ].map((stat) => (
                   <div

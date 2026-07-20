@@ -1259,6 +1259,294 @@ export const projects: Project[] = [
       { src: "/images/project-pics/efxpro/economic-news.png", caption: "Economic News", tall: true },
     ],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "WebSockets"],
+    nextProjectSlug: "voxa",
+  },
+  {
+    slug: "voxa",
+    title: "Voxa: AI Voice Follow-Up & CRM Sync",
+    subtitle: "n8n Automation for Instant Lead Response",
+    heroImage: "/images/project-pics/voxa/cover.png",
+    tags: ["n8n", "Automation", "AI/ML", "Workflow"],
+    cardTags: ["Automation", "AI/ML"],
+    cardDesc:
+      "Personal n8n automation that fires an instant AI voice call the moment a lead submits a form, then feeds the call summary straight back into an Airtable CRM record.",
+    stats: [
+      {
+        value: "20s",
+        label: "Delay before the AI voice call-back fires",
+        icon: "bolt",
+      },
+      {
+        value: "2",
+        label: "Chained n8n workflows: capture + call-summary sync",
+        icon: "account_tree",
+      },
+      {
+        value: "AI",
+        label: "Retell voice agent + OpenAI call summarization",
+        icon: "smart_toy",
+      },
+      {
+        value: "0",
+        label: "Manual steps between form submission and CRM update",
+        icon: "sync",
+      },
+    ],
+    challenge: [
+      "Most \"speed to lead\" automations stop at sending an email or Slack ping when a form is submitted, by the time a human actually calls back, the lead has already moved on. I wanted to explore whether n8n could handle a genuinely end-to-end version of this: capture the lead, place an AI-driven voice call within seconds, and feed the outcome of that call straight back into a CRM record without anyone touching a keyboard.",
+      "The workflow needed to survive two separate trigger events arriving asynchronously, the initial form submission, and later, the call-completion webhook from the AI voice provider, then reconcile both against the same lead record, while validating payloads at every branch so a malformed webhook couldn't silently corrupt the CRM data.",
+    ],
+    challengeCards: [
+      {
+        icon: "hourglass_top",
+        title: "Response Lag Kills Leads",
+        desc: "Manual follow-up after a form submit is rarely fast enough to catch a lead while intent is highest.",
+      },
+      {
+        icon: "call_split",
+        title: "Two Async Trigger Events",
+        desc: "Lead capture and call-outcome arrive on separate webhooks minutes apart and must reconcile to the same CRM record.",
+      },
+      {
+        icon: "verified_user",
+        title: "Data Integrity at Every Branch",
+        desc: "Every webhook payload needed validation before touching the CRM, so a malformed request couldn't corrupt lead data.",
+      },
+    ],
+    solution: {
+      description:
+        "I built this n8n workflow by adapting an open-source \"speed-to-lead\" community template into a two-part automation. The first flow listens for a website contact-form webhook, validates and reshapes the payload, waits briefly, then fires an outbound AI voice call through Retell before upserting the lead into an Airtable CRM record. The second flow listens for Retell's call-completion webhook, runs the transcript through an OpenAI-powered summarization chain, and writes the AI-generated summary back onto that same CRM record, closing the loop from \"form submitted\" to \"call made and logged\" with zero manual steps.",
+      image: "/images/project-pics/voxa/cover.png",
+      features: [
+        {
+          icon: "call",
+          title: "Instant AI Voice Call-Back",
+          desc: "The moment a lead submits the contact form, the workflow validates the payload and triggers a Retell AI voice agent to call them back within seconds, no human dialer in the loop.",
+        },
+        {
+          icon: "table_chart",
+          title: "Automatic Airtable CRM Upsert",
+          desc: "Every inbound lead is created or updated as a single Airtable record, so the CRM stays the source of truth without any manual data entry.",
+        },
+        {
+          icon: "psychology",
+          title: "AI Call Summarization",
+          desc: "A second workflow picks up Retell's call-completion webhook, runs the transcript through an OpenAI summarization chain, and distills it into a clean summary.",
+        },
+        {
+          icon: "sync_alt",
+          title: "Closed-Loop CRM Update",
+          desc: "The AI-generated call summary is written straight back onto the original Airtable lead record, so the full story, form, call, and outcome, lives in one place.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "As a personal exploration project rather than a client engagement, Voxa demonstrated that n8n can orchestrate a genuinely closed-loop automation, spanning two asynchronous webhook triggers, an AI voice call, and an AI summarization step, without any custom backend code. It's proof that n8n's AI nodes are production-capable, not just chatbot toys, and a template for what \"speed to lead\" can mean when it's an actual conversation within seconds, not just a notification email.",
+      testimonial: {
+        quote:
+          "I wanted to see how far n8n could go past basic 'if this, then that' automations. Chaining an AI voice call and an AI summarization step into one closed CRM loop was the right stress test. Building it end-to-end, from webhook validation to the Airtable upsert, showed me n8n's AI nodes are genuinely production-ready.",
+        author: "Edgar",
+        role: "Builder, Personal Automation Project",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/voxa/lead-capture-call.png", caption: "Instant Lead Capture & AI Voice Call" },
+      { src: "/images/project-pics/voxa/call-summary-sync.png", caption: "AI Call Summarization & CRM Sync" },
+    ],
+    techStack: ["n8n", "Airtable", "Retell AI", "OpenAI", "LangChain", "Webhooks"],
+    nextProjectSlug: "fiscora",
+  },
+  {
+    slug: "fiscora",
+    title: "Fiscora: Claude-Powered Financial Data Analyst",
+    subtitle: "Claude API Chat Interface for Financial Data Visualization",
+    heroImage: "/images/project-pics/fiscora/cover.png",
+    tags: ["Claude API", "Next.js", "AI/ML", "Data Visualization"],
+    cardTags: ["AI/ML", "Next.js"],
+    cardDesc:
+      "Personal exploration of the Claude API: a chat interface that turns uploaded financial data into Claude-generated charts and insights, no manual spreadsheet wrangling.",
+    stats: [
+      {
+        value: "6",
+        label: "Chart types Claude can generate on request",
+        icon: "bar_chart",
+      },
+      {
+        value: "3",
+        label: "Input formats supported: CSV, PDF, and images",
+        icon: "upload_file",
+      },
+      {
+        value: "AI",
+        label: "Claude 3.5 Sonnet with tool-use for chart generation",
+        icon: "smart_toy",
+      },
+      {
+        value: "0",
+        label: "Manual charting steps, Claude picks the chart type",
+        icon: "auto_awesome",
+      },
+    ],
+    challenge: [
+      "Financial analysis usually means exporting data into a spreadsheet, guessing which chart type actually tells the story, and rebuilding that chart every time the underlying numbers change. I wanted to see whether Claude's tool-use could remove that entire manual step: upload a raw file, ask a question in plain English, and get back the right chart, not just a text answer.",
+      "The technical challenge was giving Claude structured tool definitions for six different chart types, line, bar, multi-bar, area, stacked-area, and pie, and trusting it to choose the right one, shape the data correctly, and hand it off to a live rendering layer, all while also handling multimodal input, since some source data arrives as PDFs or photos rather than clean CSVs.",
+    ],
+    challengeCards: [
+      {
+        icon: "insights",
+        title: "Right Chart, Not Just an Answer",
+        desc: "Claude has to infer which of six chart types actually fits the question, not just describe the data in text.",
+      },
+      {
+        icon: "description",
+        title: "Multi-Format Input",
+        desc: "Source data arrives as CSVs, PDFs, and even photos, each needing a different extraction path before Claude can reason about it.",
+      },
+      {
+        icon: "hub",
+        title: "Tool Use to Live Rendering",
+        desc: "Claude's structured tool call has to map directly onto a real charting library with zero manual data reshaping.",
+      },
+    ],
+    solution: {
+      description:
+        "I built and ran this locally by adapting Anthropic's open-source \"Financial Data Analyst\" quickstart, a Next.js app that pairs a Claude 3.5 Sonnet chat interface with a live visualization pane. Every message is sent to Claude with tool definitions for six chart types; when Claude decides a chart is the right response, it calls a generate_graph_data tool with structured JSON, which the frontend renders instantly with Recharts, no manual charting step, no separate BI tool.",
+      image: "/images/project-pics/fiscora/cover.png",
+      features: [
+        {
+          icon: "forum",
+          title: "Chat-Driven Data Analysis",
+          desc: "Ask a question in plain English, upload a file, and Claude decides whether the right response is text, a chart, or both.",
+        },
+        {
+          icon: "bar_chart",
+          title: "Six Structured Chart Types",
+          desc: "Line, bar, multi-bar, area, stacked-area, and pie charts, each backed by a dedicated tool definition Claude calls with shaped data.",
+        },
+        {
+          icon: "image",
+          title: "Multimodal Input Handling",
+          desc: "CSVs, PDFs, and images all feed into the same conversation, letting Claude extract and visualize data regardless of source format.",
+        },
+        {
+          icon: "bolt",
+          title: "Instant Live Rendering",
+          desc: "Claude's tool call maps directly onto Recharts components in the UI, turning a structured response into a rendered chart with no manual step in between.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "As a personal exploration rather than a client build, Fiscora proved out how far Claude's tool-use goes past simple chat responses, from a coastal vacation photo turned into a pie chart of scene elements to a five-year GDP comparison generated from a plain-English request. It's a working demonstration that the Claude API can own the decision of how to present an answer, not just what the answer is.",
+      testimonial: {
+        quote:
+          "I wanted to push past basic Claude chat completions and see whether tool-use could genuinely replace a manual charting step. Watching it pick the right chart type on its own, bar vs. pie vs. stacked-area, based on nothing but a plain-English question, was the moment it clicked that this isn't just a toy demo pattern.",
+        author: "Mush",
+        role: "Builder, Personal Exploration Project",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/fiscora/gdp-chart-example.png", caption: "Claude-Generated GDP Comparison Chart" },
+      { src: "/images/project-pics/fiscora/image-analysis-example.png", caption: "Multimodal Image-to-Chart Analysis" },
+    ],
+    techStack: ["Claude API", "Next.js", "TypeScript", "Recharts", "Tailwind CSS", "PDF.js"],
+    nextProjectSlug: "helvia",
+  },
+  {
+    slug: "helvia",
+    title: "Helvia: AI Customer Support Agent",
+    subtitle: "Claude-Powered Support Agent with RAG & Sentiment Detection",
+    heroImage: "/images/project-pics/helvia/cover.png",
+    tags: ["Claude API", "AI Agent", "RAG", "Next.js"],
+    cardTags: ["AI/ML", "Next.js"],
+    cardDesc:
+      "Personal exploration of an AI support agent: Claude retrieves answers from a knowledge base, tracks conversation sentiment, and shows its own reasoning in real time.",
+    stats: [
+      {
+        value: "RAG",
+        label: "Live knowledge base retrieval with match scoring",
+        icon: "manage_search",
+      },
+      {
+        value: "3",
+        label: "Live panes: reasoning, chat, and knowledge sources",
+        icon: "view_column",
+      },
+      {
+        value: "AI",
+        label: "Claude-powered sentiment & context detection per turn",
+        icon: "psychology",
+      },
+      {
+        value: "0",
+        label: "Hidden reasoning, every inference step is visible",
+        icon: "visibility",
+      },
+    ],
+    challenge: [
+      "Most support chatbots are a black box: a user asks a question, and an answer appears with no visibility into whether the bot actually understood the question or just pattern-matched to the nearest FAQ entry. I wanted to explore what happens when you make that reasoning visible, surfacing the agent's inferred intent, sentiment, and retrieved sources in real time instead of hiding them behind the chat bubble.",
+      "The technical challenge was wiring three live surfaces to the same conversation: a retrieval-augmented knowledge base lookup with match-confidence scoring, a running sentiment and context classification per turn, and the actual chat, all updating in sync as a single message streams in, rather than bolting on an after-the-fact analytics dashboard.",
+    ],
+    challengeCards: [
+      {
+        icon: "visibility_off",
+        title: "Black-Box Chatbots",
+        desc: "Standard support bots give an answer with no visibility into what the model actually understood or retrieved.",
+      },
+      {
+        icon: "sync_problem",
+        title: "Three Live Surfaces, One Turn",
+        desc: "Reasoning, sentiment, and retrieved sources all need to update in sync as a single message streams in.",
+      },
+      {
+        icon: "search",
+        title: "Retrieval Confidence",
+        desc: "Every knowledge base match needed a visible confidence score, not just a silently-injected snippet of context.",
+      },
+    ],
+    solution: {
+      description:
+        "I built and ran this locally by adapting Anthropic's open-source \"Customer Support Agent\" quickstart, a Next.js app that pairs a Claude-powered chat with two live side panels. The left panel surfaces the assistant's inferred intent and sentiment for each turn; the right panel shows the knowledge base sources it retrieved, each with a match-confidence percentage, sourced via Retrieval-Augmented Generation. Nothing is hidden behind the chat bubble, every inference the agent makes is visible as it happens.",
+      image: "/images/project-pics/helvia/cover.png",
+      features: [
+        {
+          icon: "psychology",
+          title: "Live Reasoning Panel",
+          desc: "Every turn surfaces the assistant's inferred sentiment and context classification, tagged neutral, positive, or negative alongside a confidence indicator.",
+        },
+        {
+          icon: "manage_search",
+          title: "RAG Knowledge Retrieval",
+          desc: "Answers are grounded in retrieved knowledge base entries, each shown with its match percentage instead of a black-box citation.",
+        },
+        {
+          icon: "mood",
+          title: "User Mood Detection",
+          desc: "The agent tracks conversation sentiment turn by turn and can redirect to a different flow when it detects frustration.",
+        },
+        {
+          icon: "view_column",
+          title: "Three-Pane Transparency Layout",
+          desc: "Reasoning, chat, and sources live side by side in one view, so nothing about the agent's decision-making is hidden after the fact.",
+        },
+      ],
+    },
+    results: {
+      description:
+        "As a personal exploration rather than a client build, Helvia demonstrated what a genuinely transparent support agent looks like: every retrieved source, every sentiment read, and every context decision visible in real time rather than buried in logs. It's a working template for building trust into an AI agent's interface, not just its answers.",
+      testimonial: {
+        quote:
+          "I wanted to see what a support agent looks like when you stop hiding its reasoning. Watching the sentiment and retrieval panels update turn by turn, in sync with the actual chat, made it obvious how much trust a black-box chatbot throws away by hiding that exact information.",
+        author: "Ericka",
+        role: "Builder, Personal Exploration Project",
+      },
+    },
+    gallery: [
+      { src: "/images/project-pics/helvia/cover.png", caption: "Live Agent Interface (Empty State)" },
+      { src: "/images/project-pics/helvia/agent-in-action.png", caption: "Agent Reasoning, RAG Retrieval & Sentiment in Action" },
+    ],
+    techStack: ["Claude API", "Next.js", "TypeScript", "AWS Bedrock", "RAG", "Tailwind CSS"],
     nextProjectSlug: "custom-enterprise-crm",
   },
 ];
